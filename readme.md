@@ -1,6 +1,6 @@
 # Handlebars Static Loader
 ## Create static pages with your bundles
-![](logo)
+![](https://raw.githubusercontent.com/aniddan/handlebars-static-loader/master/assets/hadlebars-static-loader.png)
 ```JavaScript
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -47,5 +47,3 @@ Directory to load Handlebars Partials from (as in express's hbs view engine).
 Tested on Webpack 2 beta on Node.js 6 LTS.
 
 Should be compatible with Webpack 1 and any version of Node.js.
-
-[logo]: https://raw.githubusercontent.com/aniddan/handlebars-static-loader/master/assets/hadlebars-static-loader.png
