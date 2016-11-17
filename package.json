@@ -1,6 +1,6 @@
 {
   "name": "handlebars-static-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "bin/index.js",
   "license": "MIT",
   "scripts": {
@@ -12,5 +12,9 @@
     "babel-preset-stage-0": "^6.16.0"
   },
   "description": "Create static pages with your bundles",
-  "author": "Iddan Aharonson"
+  "author": "Iddan Aharonson",
+  "repository": {
+    "url": "git@github.com:aniddan/handlebars-static-loader.git",
+    "type": "git"
+  }
 }
