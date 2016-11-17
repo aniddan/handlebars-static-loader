@@ -48,4 +48,4 @@ Tested on Webpack 2 beta on Node.js 6 LTS.
 
 Should be compatible with Webpack 1 and any version of Node.js.
 
-[logo]: assets/handlebars-static-loader.png "Logo Title Text 2"
+[logo]: https://raw.githubusercontent.com/aniddan/handlebars-static-loader/master/assets/hadlebars-static-loader.png
