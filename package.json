@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "handlebars": "^4.0.6",
+    "loader-utils": "^0.2.16",
     "uppercamelcase": "^1.1.0"
   }
 }
