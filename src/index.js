@@ -8,8 +8,7 @@ export default function HandlebarsStaticLoader (source) {
     const template = Handlebars.compile(source);
     const {data = {}, partials} = parseQuery(this.query);
     if (partials) {
-        const partialsPath = path.resolve(__dirname, partials);
-        for (let partial of fs.readdirSync(partialsPath)) {
+        for (let partial of fs.readdirSync(partials)) {
             Handlebars.registerPartial(
                 uppercamelcase(partial.replace(/\.hbs$/, '')),
                 fs.readFileSync(path.resolve(partialsPath, partial), 'utf-8')
