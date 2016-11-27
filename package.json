@@ -4,10 +4,12 @@
   "main": "bin/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel src --out-dir bin"
+    "start": "npm run build --watch",
+    "build": "babel src --out-dir bin"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0"
   },
@@ -16,5 +18,8 @@
   "repository": {
     "url": "git@github.com:aniddan/handlebars-static-loader.git",
     "type": "git"
+  },
+  "dependencies": {
+    "uppercamelcase": "^1.1.0"
   }
 }

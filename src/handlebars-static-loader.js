@@ -1,18 +1,20 @@
-const fs = require('fs');
-const path = require('path');
-const Handlebars = require('handlebars');
-const {parseQuery} = require('loader-utils');
+import fs from 'fs';
+import path from 'path';
+import Handlebars from 'handlebars';
+import uppercamelcase from 'uppercamelcase';
+import {parseQuery} from 'loader-utils';
 
-module.exports = function HandlebarsStaticLoader (source) {
+export default function HandlebarsStaticLoader (source) {
     const template = Handlebars.compile(source);
     const {data = {}, partials} = parseQuery(this.query);
     if (partials) {
         const partialsPath = path.resolve(__dirname, partials);
-        const partials = fs.readdirSync(partialsPath);
-        for (let i = 0; i < partials.length; i++) {
-            const partial = partials[i];
-            Handlebars.registerPartial(partial.replace(/\.hbs$/, ''), fs.readFileSync(path.resolve(partialsPath, partial)).toString());
+        for (let partial of fs.readdirSync(partialsPath)) {
+            Handlebars.registerPartial(
+                uppercamelcase(partial.replace(/\.hbs$/, '')),
+                fs.readFileSync(path.resolve(partialsPath, partial), 'utf-8')
+            );
         }
     }
     return template(data);
-};
+}
